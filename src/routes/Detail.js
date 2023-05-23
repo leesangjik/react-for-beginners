@@ -11,6 +11,7 @@ function Detail() {
     ).json();
     setDetail(json.data.movie);
     setLoading(false);
+    //console.log();
   };
   useEffect(() => {
     getMovie();
@@ -21,7 +22,7 @@ function Detail() {
         <h1>Loading...</h1>
       ) : (
         <div>
-          <img src={detail.medium_cover_image}></img>
+          <img src={detail.medium_cover_image} alt={detail.title}></img>
           <h3>{`${detail.title}(${detail.year})`}</h3>
           <p>{`Rating : ${detail.rating}`}</p>
         </div>
