@@ -1,13 +1,19 @@
-import Button from "./Button";
-import styles from "./App.module.css";
+import { createBrowserRouter } from "react-router-dom";
+import Home from "./routes/Home";
+import Detail from "./routes/Detail";
 
-function App() {
-  return (
-    <div>
-      <h1 className={styles.title}>Welcome Back To React!</h1>
-      <Button text={"Continue"} />
-    </div>
-  );
-}
+const App = createBrowserRouter(
+  [
+    {
+      path: "/",
+      element: <Home />,
+    },
+    {
+      path: "/movie/:id",
+      element: <Detail />,
+    },
+  ],
+  { basename: process.env.PUBLIC_URL }
+);
 
 export default App;
