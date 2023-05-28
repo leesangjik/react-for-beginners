@@ -2,6 +2,8 @@
   height: 100%;
   display: flex;
   justify-content: center;
+  padding: 0 50px;
+  padding-bottom: 30px;
 }
 
 .loader {
@@ -11,20 +13,53 @@
   justify-content: center;
   align-items: center;
   font-weight: 600;
+  color: ghostwhite;
+}
+
+.rating__movie_box,
+.likeCount__movie_box {
+  padding: 0;
+  padding-top: 20px;
+  margin: 0;
+  margin-bottom: 50px;
+}
+
+.home__container {
+  display: block;
+  width: 100%;
+}
+
+.title__box {
+  color: ghostwhite;
+  padding: 10px 0;
+  margin: 10px 0 0 0;
+}
+
+.movie__box {
+  width: calc(100%);
 }
 
 .movies {
   display: grid;
-  grid-template-columns: repeat(2, minmax(400px, 1fr));
-  grid-gap: 100px;
-  padding: 50px;
-  width: 80%;
-  padding-top: 70px;
+  grid-auto-flow: column;
+  grid-gap: 20px;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  padding: 15px 0;
 }
 
-@media screen and (max-width: 1090px) {
-  .movies {
-    grid-template-columns: 1fr;
-    width: 100%;
-  }
+/* 스크롤 바 설정 시작*/
+.movies::-webkit-scrollbar {
+  width: 5px;
+  height: 6px;
 }
+
+.movies::-webkit-scrollbar-thumb {
+  background: #bdbdbd;
+  border-radius: 10px;
+}
+
+.movies::-webkit-scrollbar-track {
+  background: #353535;
+}
+/* 스크롤 바 설정 끝*/
